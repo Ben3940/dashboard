@@ -7,6 +7,7 @@ export const typeDefs = `#graphql
     }
 
     type Location {
+        id: ID!
         city: String!
         state: String!
         postal_code: String!
@@ -15,6 +16,7 @@ export const typeDefs = `#graphql
     }
 
     type Sale {
+        id: ID!
         sales: Float!
         discount: Float!
         profit: Float!
@@ -22,6 +24,8 @@ export const typeDefs = `#graphql
     }
 
     type Query {
-
+        products: [Product]
+        locations: [Location]
+        sales: [Sale]
     }
 `;

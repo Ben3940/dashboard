@@ -4,7 +4,13 @@ import { typeDefs } from './schema.js';
 
 const PORT: number = 4000;
 
-const resolvers = {};
+const resolvers = {
+  Query: {
+    products() {},
+    locations() {},
+    sales() {},
+  },
+};
 
 const server = new ApolloServer({
   typeDefs,
