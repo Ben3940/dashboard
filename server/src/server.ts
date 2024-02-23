@@ -1,14 +1,16 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { typeDefs } from './schema.js';
+import { Controller } from './controller.js';
 
 const PORT: number = 4000;
+const db = new Controller();
 
 const resolvers = {
   Query: {
-    products() {},
-    locations() {},
-    sales() {},
+    locations() {
+      return db.get_locations();
+    },
   },
 };
 

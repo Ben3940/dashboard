@@ -1,31 +1,30 @@
 export const typeDefs = `#graphql
     type Product {
-        id: ID!
-        category: String!
-        sub_category: String!
+        ID: ID!
+        Category: String!
+        Sub_Category: String!
         quantity: Int!
     }
 
     type Location {
-        id: ID!
-        city: String!
-        state: String!
-        postal_code: String!
-        region: String!
-        product: [Product]!
+        ID: ID!
+        City: String!
+        State: String!
+        Postal_Code: String!
+        Region: String!
+        Product_ID: [Product]!
     }
 
     type Sale {
-        id: ID!
-        sales: Float!
-        discount: Float!
-        profit: Float!
-        product: Product
+        ID: ID!
+        Sales: Float!
+        Discount: Float!
+        Profit: Float!
+        Product: Product!
     }
 
     type Query {
-        products: [Product]
         locations: [Location]
-        sales: [Sale]
+        
     }
 `;
