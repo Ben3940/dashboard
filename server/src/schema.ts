@@ -3,7 +3,7 @@ export const typeDefs = `#graphql
         ID: ID!
         Category: String!
         Sub_Category: String!
-        quantity: Int!
+        Quantity: Int!
     }
 
     type Location {
@@ -24,6 +24,7 @@ export const typeDefs = `#graphql
     }
 
     type Query {
+        products: [Product]
         locations: [Location]
         
     }

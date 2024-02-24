@@ -8,6 +8,11 @@ export class Controller {
     this.db.pragma('journal_mode = WAL');
   }
 
+  get_products() {
+    const stmt: Statement = this.db.prepare('SELECT * FROM Products LIMIT 10');
+    return stmt.all();
+  }
+
   get_locations() {
     const stmt: Statement = this.db.prepare('SELECT * FROM Locations LIMIT 10');
     return stmt.all();
