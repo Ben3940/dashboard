@@ -14,6 +14,9 @@ const resolvers = {
     locations() {
       return db.get_locations();
     },
+    sales() {
+      return db.get_sales();
+    },
   },
 };
 

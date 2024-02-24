@@ -26,6 +26,6 @@ export const typeDefs = `#graphql
     type Query {
         products: [Product]
         locations: [Location]
-        
+        sales: [Sale]
     }
 `;
