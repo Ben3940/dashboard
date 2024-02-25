@@ -8,8 +8,8 @@ const db = new Controller();
 
 const resolvers = {
   Query: {
-    products() {
-      return db.get_products();
+    products(parent, args) {
+      return db.get_products(args.start_idx, args.range);
     },
     locations() {
       return db.get_locations();
