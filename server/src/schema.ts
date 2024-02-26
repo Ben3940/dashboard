@@ -15,7 +15,7 @@ export const typeDefs = `#graphql
         State: String!
         Postal_Code: String!
         Region: String!
-        Product_ID: [Product]!
+        Product: [Product]!
     }
 
     type Sale {

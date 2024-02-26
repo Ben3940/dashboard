@@ -34,6 +34,12 @@ const resolvers = {
       return db.get_table_items(args.table_name, args.start_idx, args.range);
     },
   },
+
+  Location: {
+    Product(parent, args) {
+      return db.get_table_items('Products', parent.ID);
+    },
+  },
 };
 
 const server = new ApolloServer({
