@@ -23,7 +23,7 @@ export const typeDefs = `#graphql
         Sales: Float!
         Discount: Float!
         Profit: Float!
-        Product: Product!
+        Product: [Product]!
     }
 
     union Item = Product | Location | Sale

@@ -40,6 +40,12 @@ const resolvers = {
       return db.get_table_items('Products', parent.ID);
     },
   },
+
+  Sale: {
+    Product(parent, args) {
+      return db.get_table_items('Products', parent.ID);
+    },
+  },
 };
 
 const server = new ApolloServer({
