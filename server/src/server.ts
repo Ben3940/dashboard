@@ -7,6 +7,19 @@ const PORT: number = 4000;
 const db = new Controller();
 
 const resolvers = {
+  // Defines how GraphQL handles resolving union types
+  Item: {
+    __resolveType(obj) {
+      if (obj.Category) {
+        return 'Product';
+      } else if (obj.City) {
+        return 'Location';
+      } else if (obj.Sales) {
+        return 'Sale';
+      }
+    },
+  },
+
   Query: {
     products(parent, args) {
       return db.get_products(args.start_idx, args.range);
@@ -16,6 +29,9 @@ const resolvers = {
     },
     sales() {
       return db.get_sales();
+    },
+    table_items(parent, args) {
+      return db.get_table_items(args.table_name, args.start_idx, args.range);
     },
   },
 };
