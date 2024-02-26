@@ -1,4 +1,7 @@
 export const typeDefs = `#graphql
+
+    
+
     type Product {
         ID: ID!
         Category: String!
@@ -12,7 +15,7 @@ export const typeDefs = `#graphql
         State: String!
         Postal_Code: String!
         Region: String!
-        Product_ID: [Product]!
+        Product: [Product]!
     }
 
     type Sale {
@@ -20,12 +23,15 @@ export const typeDefs = `#graphql
         Sales: Float!
         Discount: Float!
         Profit: Float!
-        Product: Product!
+        Product: [Product]!
     }
 
+    union Item = Product | Location | Sale
+
     type Query {
-        products: [Product]
+        products(start_idx:Int, range:Int): [Product]
         locations: [Location]
         sales: [Sale]
+        table_items(table_name:String!, start_idx:Int, range:Int): [Item]
     }
 `;
