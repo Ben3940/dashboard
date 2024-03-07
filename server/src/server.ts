@@ -22,7 +22,7 @@ const resolvers = {
 
   Query: {
     products(parent, args) {
-      return db.get_products(args.start_idx, args.range);
+      return db.get_table_items('Products', args.start_idx, args.range);
     },
     locations() {
       return db.get_locations();
