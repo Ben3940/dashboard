@@ -1,5 +1,11 @@
+import { Table } from './components/Table';
+
 function App() {
-  return <h1>Dashboard</h1>;
+  return (
+    <div>
+      <Table />
+    </div>
+  );
 }
 
 export default App;
