@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Card() {
+function BarChart() {
   return <div></div>;
 }
 
-export default Card;
+export default BarChart;
