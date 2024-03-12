@@ -1,7 +1,21 @@
 import React from 'react';
+import Chart from 'chart.js/auto';
+import { ChartItem } from 'chart.js/auto';
 
-function BarChart() {
-  return <div></div>;
+export function BarChart() {
+  const labels = ['a', 'b', 'c', 'd'];
+  const values = [2, 4, 1, 6];
+
+  new Chart(document.querySelector('#bar-chart') as ChartItem, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Products',
+          data: values,
+        },
+      ],
+    },
+  });
 }
-
-export default BarChart;
