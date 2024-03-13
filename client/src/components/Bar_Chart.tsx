@@ -3,10 +3,16 @@ import Chart from 'chart.js/auto';
 import { ChartItem } from 'chart.js/auto';
 import { generic_fetch } from '../utils/Generic_Fetch';
 
-export function BarChart() {
-  const [labels, setLabels] = useState([]);
-  const [values, setValues] = useState([]);
+interface CategoryQuantities {
+  Category: string;
+  Quantity: number;
+}
 
+export function BarChart() {
+  const [labels, setLabels] = useState<string[]>([]);
+  const [values, setValues] = useState<number[]>([]);
+
+  // Load data from GraphQL API.  Data is used by chart
   const load_data = async () => {
     const data = await generic_fetch(
       `query Data {
@@ -18,20 +24,25 @@ export function BarChart() {
       `,
       'category_quantities'
     );
-    let label_arr: String[] = [];
-    let value_arr: String[] = [];
-    console.log(data);
-    data.forEach((item) => {
+    let label_arr: string[] = [];
+    let value_arr: number[] = [];
+
+    // Load data into respective state array
+    data.forEach((item: CategoryQuantities) => {
       label_arr.push(item.Category);
       value_arr.push(item.Quantity);
     });
     setLabels(label_arr);
     setValues(value_arr);
   };
+
   useEffect(() => {
     load_data();
   }, []);
-  (async function () {
+
+  // Slightly more readible than suggested generic call in docs:
+  //   https://www.chartjs.org/docs/latest/getting-started/usage.html
+  const generate_chart = async function () {
     new Chart(document.querySelector('#categories-quantities') as ChartItem, {
       type: 'bar',
       data: {
@@ -44,7 +55,9 @@ export function BarChart() {
         ],
       },
     });
-  })();
+  };
+
+  generate_chart();
 
   return <></>;
 }
