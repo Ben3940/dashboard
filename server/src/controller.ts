@@ -32,4 +32,14 @@ export class Controller {
 
     return stmt.all();
   }
+
+  get_category_quantities() {
+    const stmt: Statement = this.db.prepare(
+      `SELECT Category, SUM(Quantity) as Quantity
+      FROM Products
+      GROUP BY Category`
+    );
+
+    return stmt.all();
+  }
 }

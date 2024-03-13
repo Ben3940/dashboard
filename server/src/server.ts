@@ -33,6 +33,9 @@ const resolvers = {
     table_items(parent, args) {
       return db.get_table_items(args.table_name, args.start_idx, args.range);
     },
+    category_quantities() {
+      return db.get_category_quantities();
+    },
   },
 
   Location: {
