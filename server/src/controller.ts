@@ -42,4 +42,18 @@ export class Controller {
 
     return stmt.all();
   }
+
+  get_city_profits() {
+    const stmt: Statement = this.db.prepare(
+      `SELECT L.City AS City, P.Category AS Category, SUM(S.Profit) AS Profit
+       FROM Locations AS L
+       JOIN Products AS P
+       ON L.Product_ID = P.ID
+       JOIN Sales AS S
+       ON P.ID = S.Product_ID
+       GROUP BY City, Category
+       ORDER BY City
+       LIMIT 10`
+    );
+  }
 }
