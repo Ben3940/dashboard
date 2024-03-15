@@ -53,5 +53,21 @@ export class Controller {
        ORDER BY City
        LIMIT 10`
     );
+    return stmt.all();
+  }
+
+  get_n_best_worst_profits(n: Number) {
+    let results = [];
+    const stmt: Statement = this.db.prepare(`
+    SELECT L.City AS City, SUM(S.Profit) AS Profit
+       FROM Locations AS L
+       JOIN Sales AS S
+       ON L.Product_ID = S.Product_ID
+       GROUP BY City
+       ORDER BY Profit DESC
+    `);
+
+    results = results.concat(stmt.all().slice(0, n), stmt.all().slice(-n));
+    return results;
   }
 }
