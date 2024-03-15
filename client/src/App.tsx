@@ -5,7 +5,8 @@ function App() {
   return (
     <div>
       <Table />
-      <ChartWrapper />
+      <ChartWrapper chart_type='bar' />
+      <ChartWrapper chart_type='split_bar' />
     </div>
   );
 }
