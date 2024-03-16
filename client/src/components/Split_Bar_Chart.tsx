@@ -38,28 +38,24 @@ export function Split_Bar_Chart(props) {
     load_data();
   }, []);
   const generate_chart = async function () {
-    new Chart(document.querySelector('#split-bar') as ChartItem, {
+    const chart = new Chart(document.querySelector('#split-bar') as ChartItem, {
       type: 'bar',
       data: {
         labels: cities,
         datasets: [
           {
-            label: 'Cities',
+            label: 'Profits',
             data: profits,
           },
         ],
       },
       options: {
+        indexAxis: 'y',
         scales: {
           x: {
-            position: 'center',
-            ticks: {
-              labelOffset: 30,
-            },
+            position: 'bottom',
           },
           y: {
-            max: 70000,
-            min: -50000,
             ticks: {
               align: 'inner',
             },
@@ -67,7 +63,17 @@ export function Split_Bar_Chart(props) {
         },
       },
     });
+
+    console.log(chart.data);
+    let colors: string[] = [];
+    chart.data.datasets[0].data.forEach((sample) => {
+      const color: string = sample > 0 ? 'green' : 'red';
+      colors.push(color);
+    });
+    chart.data.datasets[0].backgroundColor = colors;
+    chart.update();
   };
+
   generate_chart();
   return <></>;
 }
