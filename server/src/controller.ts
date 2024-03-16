@@ -56,7 +56,7 @@ export class Controller {
     return stmt.all();
   }
 
-  get_n_best_worst_profits(n: Number) {
+  get_n_best_worst_profits(n: number) {
     let results = [];
     const stmt: Statement = this.db.prepare(`
     SELECT L.City AS City, SUM(S.Profit) AS Profit

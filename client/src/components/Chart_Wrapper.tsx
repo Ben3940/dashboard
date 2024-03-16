@@ -10,11 +10,11 @@ export function ChartWrapper(props) {
         <BarChart />
       </div>
     );
-  } else if (props.chart_type === 'split_bar') {
+  } else if (props.chart_type === 'split-bar') {
     return (
       <div className='chart'>
         <canvas id='split-bar'></canvas>
-        <Split_Bar_Chart />
+        <Split_Bar_Chart n={5} />
       </div>
     );
   }
