@@ -70,4 +70,15 @@ export class Controller {
     results = results.concat(stmt.all().slice(0, n), stmt.all().slice(-n));
     return results;
   }
+
+  get_total_profits_quantites() {
+    const stmt: Statement = this.db.prepare(`
+    SELECT SUM(S.Profit) AS Profit, SUM(P.Quantity) AS Quantity
+    FROM Products AS P
+    Join Sales AS S
+    ON P.ID = S.Product_ID
+    `);
+
+    return stmt.all();
+  }
 }
