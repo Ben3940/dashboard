@@ -55,17 +55,12 @@ export function Split_Bar_Chart(props) {
           x: {
             position: 'bottom',
           },
-          y: {
-            ticks: {
-              align: 'inner',
-            },
-          },
         },
       },
     });
-
-    console.log(chart.data);
     let colors: string[] = [];
+
+    // Assign bar colors based on profit value
     chart.data.datasets[0].data.forEach((sample) => {
       const color: string = sample > 0 ? 'green' : 'red';
       colors.push(color);
