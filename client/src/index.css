@@ -4,6 +4,6 @@
   box-sizing: border-box;
 }
 
-#bar-chart {
+.chart {
   width: 800px;
 }

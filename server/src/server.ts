@@ -36,6 +36,9 @@ const resolvers = {
     category_quantities() {
       return db.get_category_quantities();
     },
+    get_n_best_worst_profits(parent, args) {
+      return db.get_n_best_worst_profits(args.n);
+    },
   },
 
   Location: {

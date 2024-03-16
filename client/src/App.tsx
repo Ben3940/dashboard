@@ -4,8 +4,9 @@ import { Table } from './components/Table';
 function App() {
   return (
     <div>
-      <Table />
-      <ChartWrapper />
+      {/* <Table /> */}
+      {/* <ChartWrapper chart_type='bar' /> */}
+      <ChartWrapper chart_type='split-bar' />
     </div>
   );
 }

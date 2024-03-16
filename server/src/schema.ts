@@ -29,6 +29,11 @@ export const typeDefs = `#graphql
         Quantity: Int!
     }
 
+    type City_Profit {
+        City: String!
+        Profit: Float!
+    }
+
     union Item = Product | Location | Sale
 
     type Query {
@@ -37,5 +42,6 @@ export const typeDefs = `#graphql
         sales: [Sale]
         category_quantities: [Category_Quantity]
         table_items(table_name:String!, start_idx:Int, range:Int): [Item]
+        get_n_best_worst_profits(n: Int!): [City_Profit]
     }
 `;
