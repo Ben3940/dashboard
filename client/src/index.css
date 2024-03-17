@@ -2,8 +2,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.2rem;
 }
 
-.chart {
-  width: 800px;
+body {
+  padding: 0.5rem;
+}
+
+.container {
+}
+
+#bar-chart-container {
+  width: 600px;
+}
+
+#split-bar-container {
+  width: 1000px;
+}
+
+.overview-card {
+  border: 1px solid #fff;
 }

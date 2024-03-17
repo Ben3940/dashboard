@@ -30,7 +30,7 @@ export function Profit_Overview() {
     load_data();
   }, []);
   return (
-    <section className='card'>
+    <section className='overview-card'>
       <h1>Profit: {profitQuantity.Profit}</h1>
       <h1>Quantity: {profitQuantity.Quantity}</h1>
     </section>
