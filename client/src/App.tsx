@@ -1,4 +1,5 @@
 import { ChartWrapper } from './components/Chart_Wrapper';
+import { Profit_Overview } from './components/Profit_Overview';
 import { Table } from './components/Table';
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
     <div>
       {/* <Table /> */}
       {/* <ChartWrapper chart_type='bar' /> */}
-      <ChartWrapper chart_type='split-bar' />
+      {/* <ChartWrapper chart_type='split-bar' /> */}
+      <Profit_Overview />
     </div>
   );
 }

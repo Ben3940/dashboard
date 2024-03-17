@@ -39,6 +39,9 @@ const resolvers = {
     get_n_best_worst_profits(parent, args) {
       return db.get_n_best_worst_profits(args.n);
     },
+    get_total_profits_quantities() {
+      return db.get_total_profits_quantites();
+    },
   },
 
   Location: {
