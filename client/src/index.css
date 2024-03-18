@@ -12,16 +12,31 @@ body {
 }
 
 .container {
+  display: grid;
+  grid-template-columns: 5fr;
+  grid-template-rows: 4fr;
 }
 
 #bar-chart-container {
+  grid-row: 2;
+  grid-column: 2 / 5;
   width: 600px;
 }
 
 #split-bar-container {
+  grid-row: 2;
+  grid-column: 1/ 2;
   width: 1000px;
 }
 
+#table {
+  grid-row: 1;
+  grid-column: 2;
+}
+
 .overview-card {
+  grid-row: 1;
+  width: 1rem;
+
   border: 1px solid #fff;
 }
