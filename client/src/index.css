@@ -2,8 +2,43 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.2rem;
+  overflow: hidden;
 }
 
-.chart {
+body {
+  padding: 0.5rem 0.5rem 1.2rem 0.5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid red;
+  height: 100vh;
+}
+#overview-card {
+  grid-row: 1;
+  grid-column: 1;
+  border: 1px solid #fff;
+}
+
+#table {
+  grid-row: 2 / 6;
+  grid-column: 1;
+  padding-bottom: 0.5rem;
+}
+
+#bar-chart-container {
+  grid-row: 3;
+  grid-column: 2 / 5;
   width: 800px;
+}
+
+#split-bar-container {
+  grid-row: 1/ 3;
+  grid-column: 2/5;
+  width: auto;
 }

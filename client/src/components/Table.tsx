@@ -25,7 +25,7 @@ export function Table() {
 
   const [products, setProducts] = useState([]);
   return (
-    <table>
+    <table id='table'>
       <thead>
         <tr>
           <th scope='col'>ID</th>

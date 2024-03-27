@@ -4,11 +4,11 @@ import { Table } from './components/Table';
 
 function App() {
   return (
-    <div>
-      {/* <Table /> */}
-      {/* <ChartWrapper chart_type='bar' /> */}
-      {/* <ChartWrapper chart_type='split-bar' /> */}
+    <div className='container'>
       <Profit_Overview />
+      <Table />
+      <ChartWrapper chart_type='bar' />
+      <ChartWrapper chart_type='split-bar' />
     </div>
   );
 }
