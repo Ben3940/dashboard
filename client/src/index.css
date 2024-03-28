@@ -29,6 +29,7 @@ body {
   grid-row: 2 / 6;
   grid-column: 1;
   padding-bottom: 0.5rem;
+  text-align: center;
 }
 
 #bar-chart-container {
